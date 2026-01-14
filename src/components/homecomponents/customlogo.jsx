@@ -1,0 +1,82 @@
+ import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
+
+
+
+
+const CustomLogo = ({ width = 300, height = 200, fill = "#fbf0db", className = "" }) => {
+  // Create refs for all paths
+  const pathsRef = useRef([]);
+  const svgRef = useRef();
+
+ 
+  useEffect(() => {
+    const svg = svgRef.current;
+    // const paths = pathsRef.current;
+  
+    // Prepare paths for stroke animation
+    // paths.forEach((path) => {
+    //   if (path) {
+    //     const length = path.getTotalLength();
+    //     path.style.strokeDasharray = length;
+    //     path.style.strokeDashoffset = length;
+    //   }
+    // });
+  
+    // Timeline: stroke and opacity overlapping
+    const tl = gsap.timeline();
+  
+    // Stroke animation starts immediately
+    // tl.to(
+    //   paths,
+    //   {
+    //     strokeDashoffset: 0,
+    //     duration: 2,
+    //     stagger: 0.15,
+    //     ease: "power2.out",
+    //   },
+    //   0 // start at time 0
+    // );
+  
+    // Fade in SVG partially overlapping the stroke
+    tl.fromTo(
+      svg,
+      { opacity: 0 },
+      { opacity: 1, duration: 3, ease: "power2.out", delay: 0.2 },
+      0 // starts at same time as stroke animation
+    );
+  }, []);
+  
+
+
+  const addRef = (el) => {
+    if (el && !pathsRef.current.includes(el)) {
+      pathsRef.current.push(el);
+    }
+  };
+
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={width}
+      height={height}
+      viewBox="0 0 1450 400"
+      fill={fill}
+      className={className}
+      ref={svgRef}
+      strokeWidth={5}
+      stroke="white"
+      
+    >
+      <path ref={addRef} d="M149.203 390C71.6172 390 8.95216 347.328 0 263.473H52.2209C58.189 328.473 87.5322 381.069 150.695 381.565C194.461 381.565 224.799 356.26 225.296 313.092C225.296 267.939 188.99 246.603 126.822 210.382C69.1305 176.641 20.391 148.359 20.391 92.2901C20.391 33.2443 70.1252 0 134.78 0C201.921 0 258.121 35.229 272.046 104.198H220.82C214.354 48.6259 185.011 8.9313 134.78 8.43512C93.0029 7.93895 66.6438 31.7557 66.1465 68.4733C66.1465 110.649 102.95 132.481 160.641 165.725C221.815 201.45 271.549 229.733 271.549 291.259C271.549 353.282 219.825 390 149.203 390Z" stroke="white"/>
+      <path ref={addRef} d="M265.27 382.061L405.52 6.45039H446.8L589.039 382.061H265.27ZM282.677 371.641H520.406L404.526 39.6946L282.677 371.641Z" stroke="white"/>
+      <path ref={addRef} d="M599.766 382.061V378.588C638.061 373.626 643.532 360.725 643.532 315.573V72.9389C643.532 24.313 638.061 14.8855 599.766 9.92366V6.45039H743V9.92366C704.705 14.8855 699.234 24.313 699.234 72.9389V315.573C699.234 360.725 704.705 373.626 743 378.588V382.061H599.766Z" stroke="white"/>
+      <path ref={addRef} d="M879.156 390C801.571 390 738.906 347.328 729.954 263.473H782.175C788.143 328.473 817.486 381.069 880.649 381.565C924.415 381.565 954.753 356.26 955.25 313.092C955.25 267.939 918.944 246.603 856.776 210.382C799.084 176.641 750.345 148.359 750.345 92.2901C750.345 33.2443 800.079 0 864.734 0C931.875 0 988.074 35.229 1002 104.198H950.774C944.308 48.6259 914.965 8.9313 864.734 8.43512C822.957 7.93895 796.598 31.7557 796.1 68.4733C796.1 110.649 832.904 132.481 890.595 165.725C951.768 201.45 1001.5 229.733 1001.5 291.259C1001.5 353.282 949.779 390 879.156 390Z" stroke="white"/>
+      <path ref={addRef} d="M1001.16 382.061V378.588C1039.46 373.626 1044.93 360.725 1044.93 315.572V72.9389C1044.93 24.313 1039.46 14.8855 1001.16 9.92365V6.45039H1266.75V56.0687C1203.58 29.2748 1170.26 15.8779 1133.46 15.8779H1100.63V180.611H1123.51C1150.37 180.611 1202.59 177.634 1240.39 175.153V195C1202.59 192.023 1150.37 189.542 1123.51 189.542H1100.63V372.634L1149.37 372.137C1194.63 371.641 1231.93 354.771 1281.67 327.481V382.061H1001.16Z" stroke="white"/>
+      <path ref={addRef} d="M1299.27 382.061V378.588C1337.56 373.626 1343.03 360.725 1343.03 315.572V72.9389C1343.03 24.313 1337.56 14.8855 1299.27 9.92365V6.45039H1442.5V9.92365C1404.2 14.8855 1398.73 24.313 1398.73 72.9389V315.572C1398.73 360.725 1404.2 373.626 1442.5 378.588V382.061H1299.27Z" stroke="white"/>
+    </svg>
+  );
+};
+
+export default CustomLogo;
+
