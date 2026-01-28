@@ -29,7 +29,7 @@ const Service = () => {
                     opacity: 1,
                     duration: 1,
                     ease: "power1.out",
-                    delay: 0.7,
+                    delay: 0.1,
                     scrollTrigger: {
                         trigger: wrapEl,
                         start: "top bottom",
@@ -60,7 +60,7 @@ const Service = () => {
         document.fonts.ready.then(() => {
             const first = new SplitText(firstRef.current, { type: 'lines', linesClass: 'split-parent' })
             gsap.from(first.lines, {
-                duration: 2,
+                duration: 1,
                 yPercent: 50,
                 ease: "power4",
                 stagger: 0.1,

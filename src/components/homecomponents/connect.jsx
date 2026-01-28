@@ -64,7 +64,7 @@ const Connect = () => {
     return (
         <section className='h-[130vh] bg-[#fbf0db] w-full flex jsutify-center items-center pl-40'>
             <div className="wrapper connect h-[90vh]  flex justify-center items-center ">
-                <div className="left scroll col-start-1 bg-red-900 col-end-3 row-start-1 flex flex-col gap-[420px]">
+                <div className="left scroll col-start-1  col-end-3 row-start-1 flex flex-col gap-[420px]">
                     <div ref={subheadingRef} className="left-top flex flex-col items-center">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"

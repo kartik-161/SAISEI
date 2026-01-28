@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [hide, setHide] = useState(false);
+  // const [open, setOpen] = useState(false);
 
   useEffect(() => {
     gsap.fromTo('.logoNav', { y: '100%' }, { y: '0%', duration: 2, ease: 'power3.out' })
@@ -39,6 +40,13 @@ const Navbar = () => {
     })
   }, [hide])
 
+  // useEffect(() => {
+  //   if(open){
+  //     document.body.style.overflow  = 'hidden';
+  //   }else{  
+  //     document.body.style.overflow = '';
+  //   }
+  // }, [open])
 
 
   return (
@@ -60,7 +68,7 @@ const Navbar = () => {
               </p>
             </div>
           </div>
-          <div className="right col-start-10 flex justify-end items-center">
+          {/* <div className="right col-start-10 flex justify-end items-center">
 
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -70,18 +78,49 @@ const Navbar = () => {
               strokeWidth="0.5"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className='w-10 h-10 text-white z-99 cursor-pointer'
-            >
+              className={`w-10 h-10 text-white z-[99] cursor-pointer transition-transform duration-300 ease-in-out ${open ? 'rotate-180 ' : ''}`}
+              onClick={() => setOpen(!open)}>
               <line x1="3" x2="21" y1="9" y2="9"></line>
               <line x1="3" x2="21" y1="15" y2="15"></line>
             </svg>
-          </div>
+          </div> */}
 
         </div>
         <hr className='text-white w-full line' />
+
+        {/* {open && (
+          <div className='  z-[100] bg-black  h-[100vh] w-[100vw]'>
+            <div className='flex flex-col justify-center items-center h-full'>
+            
+              <ul>
+                <li>
+                  <Link to='/'>Home</Link>
+                </li>
+                <li>
+                  <Link to='/about'>About</Link>
+                </li>
+                <li>
+                  <Link to='/project'>Project</Link>
+                </li>
+                <li>
+                  <Link to='/sustainability'>Sustainability</Link>
+                </li>
+                <li>
+                  <Link to='/service'>Service</Link>
+                </li>
+                <li>
+                  <Link to='/journal'>Journal</Link>
+                </li>
+                <li>
+                  <Link to='/contact'>Contact</Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+        )} */}
       </section>
     </>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

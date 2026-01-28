@@ -133,7 +133,7 @@ const Footer = () => {
         <section className='h-[130vh] bg-[#1e1005] w-full flex flex-col items-center pt-20 text-[#fbf0da] relative'>
             <div className="wrapper h-[100vh] w-[90vw] flex flex-col  pt-20 justify-center footer relative">
                 <div className="left col-start-1 col-end-5 row-start-1">
-                    <div className="left-wrapper bg-blue-900"> 
+                    <div className="left-wrapper "> 
                         <ul ref={listRef} className='uppercase scroll text-4xl flex flex-col gap-5 mouse-pointer'>
                             <Link   to='/'> <li>(1)&nbsp; home</li> </Link>
                             <Link  to='/about'>    <li>(2)&nbsp; about </li> </Link>

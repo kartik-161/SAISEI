@@ -38,10 +38,10 @@ const Hero = () => {
 
   return (
     <main className=' relative h-screen w-full  px-20'>
-      <img src='/imghome/1st.png' className='absolute inset-0 w-full h-full object-cover brightness-50' alt="background image" />
+      <img src='/imghome/1st.png' className='absolute inset-0 w-full h-full object-cover ' alt="background image" />
       <div className="relative z-10 flex items-end justify-right h-full">
         <CustomLogo className="w-310 h-106  absolute" />
-        <CustomLogoStroke className='relative w-310 h-106 z-10 ' />
+        <CustomLogoStroke className='relative w-310 h-106 z-[10] ' />
       </div>
       <div className='absolute top-145 right-40 w-[280px] z-10 flex flex-col justify-center  p-4'>
         <Sidetext className='w-25 h-25' />
